@@ -199,12 +199,11 @@ html { -webkit-text-size-adjust: 100%; }
     min-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
     display: flex; flex-direction: column; justify-content: center;
   }
-  /* Title pinned to the top; counters, hearts, board and hint centered in the space below. */
-  .wrap { gap: 16px; width: 100%; flex: 1; }
+  /* Title, counters, hearts, board and hint as one block, centered top to bottom. */
+  .wrap { gap: 16px; width: 100%; }
   header { display: contents; }
   h1 { justify-content: center; }
-  .status { align-items: center; margin-top: auto; }
-  .game { margin-bottom: auto; }
+  .status { align-items: center; }
   .hearts { justify-content: center; }
   h1 { font-size: 30px; gap: 6px; }
   .hearts { gap: 4px; }
