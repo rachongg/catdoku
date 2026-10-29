@@ -554,7 +554,9 @@ html { -webkit-text-size-adjust: 100%; }
   let drag = null;
   const cellAt = (x, y) => document.elementFromPoint(x, y)?.closest?.(".cell");
   boardEl.addEventListener("pointerdown", e => {
-    const b = e.target.closest(".cell"); if (!b || S.won || S.lost) return;
+    const b = e.target.closest(".cell"); if (!b || S.lost) return;
+    // A finished board is locked; tapping it brings back the Next level screen.
+    if (S.won) { showWin(); return; }
     const i = +b.dataset.i;
     cursor = i;
     const paint = S.known[i] ? null : S.cells[i] === EMPTY ? MARK : S.cells[i] === MARK ? EMPTY : null;
@@ -610,7 +612,8 @@ html { -webkit-text-size-adjust: 100%; }
 
   // ---------- Boot ----------
   S = load();
-  if (S) { renderAll(); if (S.lost) showLose(); }
+  // A saved game that was already finished reopens on its Next level screen.
+  if (S) { renderAll(); if (S.lost) showLose(); else if (S.won) showWin(); }
   else newGame(false);
 })();
 </script>
