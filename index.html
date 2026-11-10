@@ -320,12 +320,12 @@ html { -webkit-text-size-adjust: 100%; }
         <span><b>Cats can't touch</b><small>Not even corner to corner.</small></span>
       </li>
     </ul>
-    <div class="taps" aria-label="Tap a square once to mark no cat, twice for a cat, three times to clear">
+    <div class="taps" aria-label="Tap a square once to mark an X, double tap to place a cat">
       <span class="step"><span class="sq"></span>Empty</span><span class="arrow" aria-hidden="true">&rarr;</span>
-      <span class="step"><span class="sq"><svg class="x" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2 8 8M8 2 2 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>No cat</span><span class="arrow" aria-hidden="true">&rarr;</span>
-      <span class="step"><span class="sq"><svg class="cat" viewBox="0 0 100 100" aria-hidden="true"><use href="#cat-1"></use></svg></span>Cat</span>
+      <span class="step"><span class="sq"><svg class="x" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 2 8 8M8 2 2 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>1 tap = ✕</span><span class="arrow" aria-hidden="true">&rarr;</span>
+      <span class="step"><span class="sq"><svg class="cat" viewBox="0 0 100 100" aria-hidden="true"><use href="#cat-1"></use></svg></span>2 taps = cat</span>
     </div>
-    <p class="help-note">Tap a square to switch between these. Drag to mark lots of squares at once.</p>
+    <p class="help-note"><b>Tap once</b> to mark an ✕ where a cat can't go. <b>Double tap</b> to place a cat. Tap again to clear it. Drag to mark lots of ✕s at once.</p>
     <p class="help-note">A cat in the wrong spot costs a heart, and you have 3. Stuck? Tap <b>Hint</b>.</p>
     <div class="row"><button type="button" class="btn primary" id="helpClose">Let's play!</button></div>
   </div>
